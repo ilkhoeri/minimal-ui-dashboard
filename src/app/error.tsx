@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export default function Error({
-  error
+  error,
 }: {
   error: Error & { digest?: string };
   reset: () => void;

@@ -23,8 +23,8 @@ import {
 //   FormField,
 //   FormItem,
 //   FormLabel,
-//   FormMessage
-// } from "@/client/components/ui/form";
+//   FormMessage,
+// } from '@/client/components/ui/form';
 
 export function SettingsPage({ session }: Session) {
   if (!session) {
