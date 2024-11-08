@@ -1,3 +1,2 @@
-./src/*
 ./src/shared/lib/db.ts
 ./src/client/components/ui/media.tsx
