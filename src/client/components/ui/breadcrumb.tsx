@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link, { type LinkProps } from 'next/link';
 import { IconChevronRight, IconDots } from '@tabler/icons-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/lib/utils';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,

@@ -1,4 +1,4 @@
-import db from '@/lib/db';
+import db from '@/shared/lib/db';
 import NextAuth from 'next-auth';
 import authConfig from './config';
 import { getUserById } from './user';

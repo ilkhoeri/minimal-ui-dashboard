@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { currentUser } from '@/lib/account';
-import db from '@/lib/db';
+import { currentUser } from '@/shared/lib/account';
+import db from '@/shared/lib/db';
 
 export async function POST(
   req: Request,

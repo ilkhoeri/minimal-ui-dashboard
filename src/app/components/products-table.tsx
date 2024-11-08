@@ -1,7 +1,7 @@
 'use client';
 
 import { Product } from './product';
-import { SelectProduct } from '@/types/client';
+import { SelectProduct } from '@/shared/types/client';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import { Button } from '@/client/components/ui/button';
@@ -21,7 +21,7 @@ import {
   CardTitle,
 } from '@/client/components/ui/card';
 
-import type { Session } from '@/types/auth';
+import type { Session } from '@/shared/types/auth';
 
 export function ProductsTable({
   session,

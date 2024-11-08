@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import * as React from 'react';
-import { Session } from '@/types/auth';
+import { Session } from '@/shared/types/auth';
 import { Button } from '@/client/components/ui/button';
 import { classInput, Input } from '@/client/components/ui/input';
 

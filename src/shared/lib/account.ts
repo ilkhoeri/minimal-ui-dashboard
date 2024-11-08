@@ -1,5 +1,5 @@
-import { db } from '@/lib/db';
-import { auth } from '@/lib/auth';
+import { db } from '@/shared/lib/db';
+import { auth } from '@/shared/lib/auth';
 
 export const getAccountByUserId = async (userId: string) => {
   try {

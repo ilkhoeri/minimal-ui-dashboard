@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import authConfig from '@/lib/config';
+import authConfig from '@/shared/lib/config';
 import {
   DEFAULT_SIGN_IN_REDIRECT,
   apiAuthPrefix,

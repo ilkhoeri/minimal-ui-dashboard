@@ -1,9 +1,9 @@
 import Providers from '../components/providers';
-import { auth } from '@/lib/auth';
+import { auth } from '@/shared/lib/auth';
 import { User } from '../components/user';
 import { SearchInput } from '../components/search';
 import { Analytics } from '@vercel/analytics/react';
-import { getIdNameProducts } from '@/lib/get-product';
+import { getIdNameProducts } from '@/shared/lib/get-product';
 import { NavBreadcrumb, DesktopNav, MobileNav } from '../components/nav';
 
 export default async function DashboardLayout({

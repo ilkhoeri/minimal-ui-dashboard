@@ -1,6 +1,6 @@
-import db from '@/lib/db';
-import { SelectProduct } from '@/types/client';
-import { price, formatTime } from '@/lib/utils';
+import db from '@/shared/lib/db';
+import { SelectProduct } from '@/shared/types/client';
+import { price, formatTime } from '@/shared/lib/utils';
 import { Image, Product } from '@prisma/client';
 
 export async function getProducts(

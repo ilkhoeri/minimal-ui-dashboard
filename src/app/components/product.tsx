@@ -11,10 +11,10 @@ import {
 } from '@/client/components/ui/dropdown-menu';
 import { IconDots } from '@tabler/icons-react';
 import { TableCell, TableRow } from '@/client/components/ui/table';
-import { SelectProduct } from '@/types/client';
-import { cn, formatTime } from '@/lib/utils';
+import { SelectProduct } from '@/shared/types/client';
 import { DeleteProduct } from './actions';
-import { Session } from '@/types/auth';
+import { Session } from '@/shared/types/auth';
+import { cn, formatTime } from '@/shared/lib/utils';
 import { Media } from '@/client/components/ui/media';
 
 export function Product({

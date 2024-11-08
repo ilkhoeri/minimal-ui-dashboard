@@ -1,9 +1,9 @@
-import { redirect } from "next/navigation";
-import { currentUser } from "@/lib/account";
-import { ProductForm } from "../../../../components/product-form";
-import { getProduct } from "@/lib/get-product";
+import { redirect } from 'next/navigation';
+import { currentUser } from '@/shared/lib/account';
+import { getProduct } from '@/shared/lib/get-product';
+import { ProductForm } from '../../../../components/product-form';
 
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata, ResolvingMetadata } from 'next';
 
 type Params = {
   params: Promise<{ dashboard: string; editId: string }>;
@@ -11,15 +11,15 @@ type Params = {
 
 export async function generateMetadata(
   { params }: Params,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const id = (await params).editId;
   const product = await getProduct(id);
   const previousImages = (await parent).openGraph?.images || [];
 
   const url = process.env.NEXTAUTH_URL;
-  const slug = product?.id || "";
-  const namePage = product?.name || "NotFound!";
+  const slug = product?.id || '';
+  const namePage = product?.name || 'NotFound!';
 
   return {
     title: product?.name,
@@ -30,16 +30,16 @@ export async function generateMetadata(
       description: namePage,
       images: [
         {
-          url: product?.images?.[0].url || "",
+          url: product?.images?.[0].url || '',
           width: 800,
-          height: 800
+          height: 800,
         },
-        ...previousImages
+        ...previousImages,
       ],
-      url: url + "/products/" + slug,
-      locale: "en_US",
-      type: "website"
-    }
+      url: url + '/products/' + slug,
+      locale: 'en_US',
+      type: 'website',
+    },
   };
 }
 
@@ -50,7 +50,7 @@ export default async function Page({ params }: Params) {
   const sanitizedData = await getProduct(editId);
 
   if (dashboardId !== session?.id || editId !== sanitizedData.id) {
-    redirect("/dashboard");
+    redirect('/dashboard');
   }
 
   return (

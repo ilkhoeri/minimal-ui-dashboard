@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation";
-import { currentUser } from "@/lib/account";
-import { DashboardPage, dashboardMetadata } from "./dashboard";
+import { redirect } from 'next/navigation';
+import { currentUser } from '@/shared/lib/account';
+import { DashboardPage, dashboardMetadata } from './dashboard';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   return { ...dashboardMetadata };
@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function UserLayout({
   params,
-  searchParams
+  searchParams,
 }: Readonly<{
   params: Promise<{ dashboard: string }>;
   searchParams: Promise<{ q: string; tab: string }>;
@@ -19,7 +19,7 @@ export default async function UserLayout({
   const session = await currentUser();
 
   if (!session) return null;
-  const paths = ["dashboard", session.id];
+  const paths = ['dashboard', session.id];
 
   if (!paths.includes(slug)) {
     redirect(`/dashboard/${session.id}`);

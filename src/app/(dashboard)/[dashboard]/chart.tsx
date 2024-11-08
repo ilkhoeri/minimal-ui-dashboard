@@ -15,7 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/client/components/ui/chart';
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/lib/utils';
 
 export const description = 'An interactive bar chart';
 

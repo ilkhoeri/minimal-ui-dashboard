@@ -1,6 +1,6 @@
-import { price } from '@/lib/utils';
+import { price } from '@/shared/lib/utils';
 import { notFound } from 'next/navigation';
-import { getProduct } from '@/lib/get-product';
+import { getProduct } from '@/shared/lib/get-product';
 import { Input } from '@/client/components/ui/input';
 import { Media } from '@/client/components/ui/media';
 import { RatingStars } from '@/client/components/rating/rating';

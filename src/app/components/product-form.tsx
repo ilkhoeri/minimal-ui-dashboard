@@ -9,16 +9,16 @@ import { useParams, useRouter } from 'next/navigation';
 
 import { products } from '@/shared/schemas/client';
 import { Input } from '@/client/components/ui/input';
-import { SelectProduct } from '@/types/client';
+import { SelectProduct } from '@/shared/types/client';
 import { Button } from '@/client/components/ui/button';
 import { Heading } from '@/client/components/ui/heading';
 import { Textarea } from '@/client/components/ui/textarea';
 import { Separator } from '@/client/components/ui/separator';
 import { ImageUpload } from '@/client/components/ui/image-upload';
-import { formatDateToInput } from '@/lib/utils';
 import { DeleteProduct } from './actions';
-import { Session } from '@/types/auth';
+import { Session } from '@/shared/types/auth';
 import { IconTrash } from '@tabler/icons-react';
+import { formatDateToInput } from '@/shared/lib/utils';
 
 import {
   Form,

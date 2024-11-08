@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { currentUser } from '@/lib/account';
+import { currentUser } from '@/shared/lib/account';
 import { Button } from '@/client/components/ui/button';
-import { getProducts } from '@/lib/get-product';
+import { getProducts } from '@/shared/lib/get-product';
 import { IconFileDownload, IconCirclePlus } from '@tabler/icons-react';
 import {
   Tabs,
@@ -51,13 +51,13 @@ export default async function Page(
         </TabsList>
         <div className="ml-auto flex items-center gap-2">
           <Button size="sm" variant="outline" className="h-8 gap-1">
-            <IconFileDownload className="h-3.5 w-3.5" />
+            <IconFileDownload className="size-5 min-h-5 min-w-5" />
             <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
               Export
             </span>
           </Button>
           <Link href={`/${userId}/products/add`} className={classLink}>
-            <IconCirclePlus className="h-3.5 w-3.5" />
+            <IconCirclePlus className="size-5 min-h-5 min-w-5" />
             <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
               Add Product
             </span>

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { signIn } from '@/lib/auth';
+import { signIn } from '@/shared/lib/auth';
 import { SignForm } from '../components/sign-form';
 import { Button } from '@/client/components/ui/button';
 

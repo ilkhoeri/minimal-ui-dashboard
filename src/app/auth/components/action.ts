@@ -1,12 +1,12 @@
-"use client";
-import * as React from "react";
-import * as z from "zod";
+'use client';
+import * as React from 'react';
+import * as z from 'zod';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { useRouter, useSearchParams } from "next/navigation";
-import { SignInSchema, SignUpSchema } from "@/schemas/auth";
-import { signin, signup } from "./handler";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { SignInSchema, SignUpSchema } from '@/shared/schemas/auth';
+import { signin, signup } from './handler';
 
 export function useSignUp() {
   const router = useRouter();
@@ -19,11 +19,11 @@ export function useSignUp() {
   const signupForm = useForm<SignUpFormValues>({
     resolver: zodResolver(SignUpSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: ""
-    }
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
   });
 
   const onSubmit = (values: SignUpFormValues) => {
@@ -32,7 +32,7 @@ export function useSignUp() {
       signup(values)
         .then((data) => {
           if (data.error) {
-            console.log("SIGN_UP ERROR:", data.error);
+            console.log('SIGN_UP ERROR:', data.error);
             alert(data.error.toUpperCase());
           }
           if (data.success) {
@@ -42,7 +42,7 @@ export function useSignUp() {
           }
         })
         .catch(() => {
-          alert("Something went wrong!");
+          alert('Something went wrong!');
         });
     });
   };
@@ -52,11 +52,11 @@ export function useSignUp() {
 
 export function useSignIn() {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl");
+  const callbackUrl = searchParams.get('callbackUrl');
   const urlError =
-    searchParams.get("error") === "OAuthAccountNotLinked"
-      ? "Email already in use with different provider!"
-      : "LOGIN SUCCESS! wait redirect to home.";
+    searchParams.get('error') === 'OAuthAccountNotLinked'
+      ? 'Email already in use with different provider!'
+      : 'LOGIN SUCCESS! wait redirect to home.';
 
   const [disabled, setDisabled] = React.useState<boolean>(false);
   const [transition, setTransition] = React.useTransition();
@@ -65,7 +65,7 @@ export function useSignIn() {
 
   const signinForm = useForm<SignInFormValues>({
     resolver: zodResolver(SignInSchema),
-    defaultValues: { email: "", password: "" }
+    defaultValues: { email: '', password: '' },
   });
 
   const onSubmit = (values: SignInFormValues) => {
@@ -74,7 +74,7 @@ export function useSignIn() {
       signin(values, callbackUrl)
         .then((data) => {
           if (data?.error) {
-            console.log("SIGN_UP ERROR:", data.error);
+            console.log('SIGN_UP ERROR:', data.error);
             alert(data.error);
           }
           if (data?.success) {

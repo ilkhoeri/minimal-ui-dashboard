@@ -1,6 +1,6 @@
 import { SidebarMain } from '../../components/sidebar-main';
-import { auth, signOut as sessionOut } from '@/lib/auth';
-import { getIdNameProducts } from '@/lib/get-product';
+import { auth, signOut as sessionOut } from '@/shared/lib/auth';
+import { getIdNameProducts } from '@/shared/lib/get-product';
 import { redirect } from 'next/navigation';
 
 export default async function Layout({

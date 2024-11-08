@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cn, remakeName } from '@/lib/utils';
+import { cn, remakeName } from '@/shared/lib/utils';
 import { VercelLogo } from '@/client/components/icons';
 import { Button } from '@/client/components/ui/button';
 import {

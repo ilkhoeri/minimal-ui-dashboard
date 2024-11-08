@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { auth, signOut } from '@/lib/auth';
+import { auth, signOut } from '@/shared/lib/auth';
 import { Button } from '@/client/components/ui/button';
 import { IconUser } from '@tabler/icons-react';
 import {

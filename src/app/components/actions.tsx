@@ -6,8 +6,8 @@ import { Slot } from '@radix-ui/react-slot';
 import { useRouter } from 'next/navigation';
 import { AlertModal } from '@/client/components/ui/alert-modal';
 
-import type { SelectProduct } from '@/types/client';
-import type { Session } from '@/types/auth';
+import type { SelectProduct } from '@/shared/types/client';
+import type { Session } from '@/shared/types/auth';
 
 export function DeleteProduct({
   session,

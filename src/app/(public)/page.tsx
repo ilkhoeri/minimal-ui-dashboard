@@ -1,5 +1,5 @@
-import { currentUser } from '@/lib/account';
-import { getProducts } from '@/lib/get-product';
+import { currentUser } from '@/shared/lib/account';
+import { getProducts } from '@/shared/lib/get-product';
 import { Tabs, TabsContent } from '@/client/components/ui/tabs';
 import { ProductsTable } from '../components/products-table';
 
