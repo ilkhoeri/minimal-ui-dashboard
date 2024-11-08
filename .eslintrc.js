@@ -1,3 +1,12 @@
+
+module.exports = {
+  extends: ['airbnb', 'prettier'],
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': ['error'],
+  },
+};
+/**
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -26,3 +35,4 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
   },
 };
+ */
