@@ -41,6 +41,23 @@ export async function getProducts(
   const tabValue =
     products.length >= productsPerPage ? tab + productsPerPage : null;
 
+  // search double id
+  function findDuplicates(arr) {
+    let seen = new Set();
+    let duplicates = [];
+    for (let num of arr) {
+      if (seen.has(num)) {
+        duplicates.push(num);
+      } else {
+        seen.add(num);
+      }
+    }
+    return duplicates;
+  }
+  // console.log(findDuplicates([1, 3, 2, 3, 4, 1]));
+  const productId = products.flatMap((i) => i.id);
+  console.log(findDuplicates(productId));
+
   return { products, tabValue, totalProducts };
 }
 
