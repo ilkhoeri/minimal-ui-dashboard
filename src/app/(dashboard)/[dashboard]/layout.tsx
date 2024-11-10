@@ -20,7 +20,9 @@ export default async function Layout({
 
   return (
     <SidebarMain {...{ session, products, signOut }}>
-      <main className="flex flex-1 flex-col gap-6 p-4 pt-0">{children}</main>
+      <main className="size-full flex flex-1 flex-col gap-6 p-4 pt-0">
+        {children}
+      </main>
     </SidebarMain>
   );
 }
