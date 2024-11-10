@@ -3,6 +3,8 @@ import { getProducts } from '@/server/post/get-product';
 import { Tabs, TabsContent } from '@/client/components/ui/tabs';
 import { ProductsTable } from '../components/products-table';
 
+import ProductsJson from '@/dummy-products.json';
+
 export default async function Page(props: {
   searchParams: Promise<{ q: string; tab: string }>;
 }) {
@@ -20,7 +22,8 @@ export default async function Page(props: {
       <TabsContent value="all">
         <ProductsTable
           session={session}
-          products={products}
+          // @ts-ignore
+          products={ProductsJson}
           tabValue={tabValue}
           totalProducts={totalProducts}
         />

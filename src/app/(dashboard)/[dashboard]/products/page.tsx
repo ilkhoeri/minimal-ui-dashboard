@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from 'next/link';
 import { currentUser } from '@/server/auth/account';
 import { Button } from '@/client/components/ui/button';
@@ -11,6 +12,8 @@ import {
 } from '@/client/components/ui/tabs';
 import { ProductsTable } from '../../../components/products-table';
 import { redirect } from 'next/navigation';
+
+import products from '@/dummy-products.json';
 
 export interface Params {
   params: Promise<{ dashboard: string }>;
@@ -32,7 +35,7 @@ export default async function Page(
   if (userId !== session?.id) {
     redirect('/dashboard');
   }
-  const { products, tabValue, totalProducts } = await getProducts(
+  const { /** products, */ tabValue, totalProducts } = await getProducts(
     search,
     Number(tab),
     { productsPerPage, userId }

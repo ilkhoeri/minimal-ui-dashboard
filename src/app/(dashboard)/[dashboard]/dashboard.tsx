@@ -1,7 +1,10 @@
+// @ts-nocheck
 import { redirect } from 'next/navigation';
 import { getProducts } from '@/server/post/get-product';
 import { ProductsSection } from './components';
 import { ChartSection } from './chart';
+
+import products from '@/dummy-products.json';
 
 import type { Metadata } from 'next';
 import type { Session } from '@/shared/types/auth';
@@ -37,10 +40,13 @@ export async function DashboardPage(
     redirect('/auth/sign-in');
   }
 
-  const { products, tabValue, totalProducts } = await getProducts(
+  const { /** products, */ tabValue, totalProducts } = await getProducts(
     search,
     Number(tab),
-    { productsPerPage, userId: session.id }
+    {
+      productsPerPage,
+      userId: session.id
+    }
   );
 
   return (

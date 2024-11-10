@@ -1,0 +1,182 @@
+[
+  {
+    "id": "934e6847-4377-42a7-b9c9-f60323a8ef6c",
+    "name": "Smartphone X Pro",
+    "status": "active",
+    "price": "999.00",
+    "stock": 150,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0000l0leciimnkv8",
+        "productId": "934e6847-4377-42a7-b9c9-f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/smartphone-gaPvyZW6aww0IhD3dOpaU6gBGILtcJ.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7-b9c9-f60323aww8ef6csd",
+    "name": "Wireless Earbuds Ultra",
+    "status": "active",
+    "price": "199.00",
+    "stock": 300,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0000l0leciimnkv8sd",
+        "productId": "934e6847-4377-42a7-b9c9-f60323aww8ef6csd",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/earbuds-3rew4JGdIK81KNlR8Edr8NBBhFTOtX.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7-b9c9-f60323a8ef6ckf",
+    "name": "Smart Home Hub",
+    "status": "active",
+    "price": "149.00",
+    "stock": 200,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0000l0leciimnkv809",
+        "productId": "934e6847-4377-42a7-b9c9-f60323a8ef6ckf",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/home-iTeNnmKSMnrykOS9IYyJvnLFgap7Vw.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7-b9c9-2435f60323a8ef6c",
+    "name": "4K Ultra HD Smart TV",
+    "status": "active",
+    "price": "799.00",
+    "stock": 50,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0000l0leciimnkvtf8",
+        "productId": "934e6847-4377-42a7-b9c9-2435f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/tv-H4l26crxtm9EQHLWc0ddrsXZ0V0Ofw.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7-b9j89c9-f60323a8ef6c",
+    "name": "Gaming Laptop Pro",
+    "status": "active",
+    "price": "1299.00",
+    "stock": 75,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0000l0le43gjciimnkv8",
+        "productId": "934e6847-4377-42a7-b9j89c9-f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/laptop-9bgUhjY491hkxiMDeSgqb9R5I3lHNL.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e680909hj47-4377-42a7-b9c9-f60323a8ef6c",
+    "name": "VR Headset Plus",
+    "status": "active",
+    "price": "349.00",
+    "stock": 120,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf090000l0leciimnkv8",
+        "productId": "934e680909hj47-4377-42a7-b9c9-f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/headset-lYnRnpjDbZkB78lS7nnqEJFYFAUDg6.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7op98bcds-b9c9-f6032jh3a8ef6c",
+    "name": "Smartwatch Elite",
+    "status": "active",
+    "price": "249.00",
+    "stock": 250,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwc34yukf0000l0leciimnkv8",
+        "productId": "934e6847-4377-42a7op98bcds-b9c9-f6032jh3a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/watch-S2VeARK6sEM9QFg4yNQNjHFaHc3sXv.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-4377-42a7-b999c9-f60323a8ef6c",
+    "name": "Bluetooth Speaker Max",
+    "status": "active",
+    "price": "99.00",
+    "stock": 400,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwcf0897000l0leciimnkv8",
+        "productId": "934e6847-4377-42a7-b999c9-f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/speaker-4Zk0Ctx5AvxnwNNTFWVK4Gtpru4YEf.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "93lkl884e6847-4377-42a7-b9c099-f60323a8ef6c",
+    "name": "Portable Charger Super",
+    "status": "active",
+    "price": "59.00",
+    "stock": 500,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gwi89cf0000l0leciimnkv8",
+        "productId": "93lkl884e6847-4377-42a7-b9c099-f60323a8ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/charger-GzRr0NSkCj0ZYWkTMvxXGZQu47w9r5.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  },
+  {
+    "id": "934e6847-437709-42a7-b9c9-f60323a8jh55ef6c",
+    "name": "Smart Thermostat Pro",
+    "status": "active",
+    "price": "199.00",
+    "stock": 175,
+    "description": "",
+    "images": [
+      {
+        "id": "cm3b0gw00cf0000l0l9809eciimnkv8",
+        "productId": "934e6847-437709-42a7-b9c9-f60323a8jh55ef6c",
+        "url": "https://uwja77bygk2kgfqe.public.blob.vercel-storage.com/thermostat-8GnK2LDE3lZAjUVtiBk61RrSuqSTF7.webp"
+      }
+    ],
+    "availableAt": "2024-11-10T03:03:00.000Z",
+    "createdAt": "2024-11-10T03:04:33.466Z",
+    "updatedAt": "2024-11-10T03:04:33.466Z"
+  }
+]
