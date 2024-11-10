@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/shared/lib/db';
+import db from '@/server/db';
 
 export async function GET(
   req: Request,
-  { params }: { params: Promise<{ productId: string }> },
+  { params }: { params: Promise<{ productId: string }> }
 ) {
   try {
     const productId = (await params).productId;
@@ -14,7 +14,7 @@ export async function GET(
 
     const product = await db.product.findUnique({
       where: { id: productId },
-      include: { images: true },
+      include: { images: true }
     });
     /** // if you need data sanitization
     const sanitizedData = {

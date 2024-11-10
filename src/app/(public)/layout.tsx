@@ -1,13 +1,13 @@
 import Providers from '../components/providers';
-import { auth } from '@/shared/lib/auth';
+import { auth } from '@/server/auth/auth';
 import { User } from '../components/user';
 import { SearchInput } from '../components/search';
 import { Analytics } from '@vercel/analytics/react';
-import { getIdNameProducts } from '@/shared/lib/get-product';
+import { getIdNameProducts } from '@/server/post/get-product';
 import { NavBreadcrumb, DesktopNav, MobileNav } from '../components/nav';
 
 export default async function DashboardLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

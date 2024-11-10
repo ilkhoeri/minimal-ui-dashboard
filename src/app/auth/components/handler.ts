@@ -1,12 +1,12 @@
 'use server';
 
 import * as z from 'zod';
-import db from '@/shared/lib/db';
+import db from '@/server/db';
 import bcrypt from 'bcryptjs';
 
-import { signIn } from '@/shared/lib/auth';
+import { signIn } from '@/server/auth/auth';
 import { AuthError } from 'next-auth';
-import { getUserByEmail } from '@/shared/lib/user';
+import { getUserByEmail } from '@/server/auth/user';
 import { SignInSchema, SignUpSchema } from '@/shared/schemas/auth';
 
 export const signup = async (values: z.infer<typeof SignUpSchema>) => {
@@ -28,8 +28,8 @@ export const signup = async (values: z.infer<typeof SignUpSchema>) => {
     data: {
       name,
       email,
-      password: hashedPassword,
-    },
+      password: hashedPassword
+    }
   });
 
   return { success: 'Register success' };
@@ -37,7 +37,7 @@ export const signup = async (values: z.infer<typeof SignUpSchema>) => {
 
 export const signin = async (
   values: z.infer<typeof SignInSchema>,
-  callbackUrl?: string | null,
+  callbackUrl?: string | null
 ) => {
   const validatedFields = SignInSchema.safeParse(values);
 
@@ -56,7 +56,7 @@ export const signin = async (
     await signIn('credentials', {
       email,
       password,
-      redirectTo: callbackUrl || '/',
+      redirectTo: callbackUrl || '/'
     });
   } catch (error) {
     if (error instanceof AuthError) {

@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@/shared/lib/auth';
-import db from '@/shared/lib/db';
+import { auth } from '@/server/auth/auth';
+import db from '@/server/db';
 
 export async function PATCH(
   req: Request,
-  { params }: { params: Promise<{ userId: string }> },
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
     const userId = (await params).userId;
@@ -23,11 +23,11 @@ export async function PATCH(
 
     const avatar = await db.user.updateMany({
       where: {
-        id: userId,
+        id: userId
       },
       data: {
-        image,
-      },
+        image
+      }
     });
 
     return NextResponse.json(avatar);
@@ -39,7 +39,7 @@ export async function PATCH(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: Promise<{ userId: string }> },
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
     const userId = (await params).userId;
@@ -59,8 +59,8 @@ export async function DELETE(
     const avatar = await db.user.deleteMany({
       where: {
         id: userId,
-        image,
-      },
+        image
+      }
     });
 
     return NextResponse.json(avatar);

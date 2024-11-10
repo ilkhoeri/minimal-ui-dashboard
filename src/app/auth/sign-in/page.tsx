@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { signIn } from '@/shared/lib/auth';
+import { signIn } from '@/server/auth/auth';
 import { SignForm } from '../components/sign-form';
 import { Button } from '@/client/components/ui/button';
 
@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
       description: namePage,
       url: url + '/auth/sign-in/',
       locale: 'en_US',
-      type: 'website',
-    },
+      type: 'website'
+    }
   };
 }
 

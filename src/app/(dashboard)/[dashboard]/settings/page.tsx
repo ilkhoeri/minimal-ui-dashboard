@@ -1,4 +1,4 @@
-import { currentUser } from '@/shared/lib/account';
+import { currentUser } from '@/server/auth/account';
 import { SettingsPage } from './components';
 
 import type { Metadata, ResolvingMetadata } from 'next';
@@ -8,7 +8,7 @@ interface Params {
 
 export async function generateMetadata(
   { params }: Params,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const id = (await params).dashboard;
   const user = await currentUser();
@@ -29,14 +29,14 @@ export async function generateMetadata(
         {
           url: user?.image || '',
           width: 800,
-          height: 800,
+          height: 800
         },
-        ...previousImages,
+        ...previousImages
       ],
       url: url + slug,
       locale: 'en_US',
-      type: 'website',
-    },
+      type: 'website'
+    }
   };
 }
 

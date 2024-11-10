@@ -7,15 +7,15 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@/client/components/ui/card';
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
+  ChartTooltipContent
 } from '@/client/components/ui/chart';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/functions';
 
 export const description = 'An interactive bar chart';
 
@@ -110,21 +110,21 @@ const chartData = [
   { date: '2024-06-27', desktop: 448, mobile: 490 },
   { date: '2024-06-28', desktop: 149, mobile: 200 },
   { date: '2024-06-29', desktop: 103, mobile: 160 },
-  { date: '2024-06-30', desktop: 446, mobile: 400 },
+  { date: '2024-06-30', desktop: 446, mobile: 400 }
 ];
 
 const chartConfig = {
   views: {
-    label: 'Page Views',
+    label: 'Page Views'
   },
   desktop: {
     label: 'Desktop',
-    color: 'hsl(var(--chart-1))',
+    color: 'hsl(var(--chart-1))'
   },
   mobile: {
     label: 'Mobile',
-    color: 'hsl(var(--chart-2))',
-  },
+    color: 'hsl(var(--chart-2))'
+  }
 } satisfies ChartConfig;
 
 export function ChartSection() {
@@ -135,9 +135,9 @@ export function ChartSection() {
   const total = React.useMemo(
     () => ({
       desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
-      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),
+      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0)
     }),
-    [],
+    []
   );
 
   React.useEffect(() => {
@@ -165,13 +165,13 @@ export function ChartSection() {
                   'relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-l sm:border-t-0 sm:px-8 sm:py-6 last:rounded-tr-lg',
                   !isClient
                     ? 'animate-pulse bg-muted'
-                    : 'data-[active=true]:bg-muted/50',
+                    : 'data-[active=true]:bg-muted/50'
                 )}
                 onClick={() => setActiveChart(chart)}
               >
                 <span
                   className={cn('text-xs text-muted-foreground', {
-                    'text-transparent': !isClient,
+                    'text-transparent': !isClient
                   })}
                 >
                   {chartConfig[chart].label}
@@ -189,7 +189,7 @@ export function ChartSection() {
       <CardContent
         suppressHydrationWarning
         className={cn('min-h-[298px] px-2 sm:p-6 rounded-b-lg', {
-          'animate-pulse bg-muted': !isClient,
+          'animate-pulse bg-muted': !isClient
         })}
       >
         {isClient && <Chart activeChart={activeChart} />}
@@ -199,7 +199,7 @@ export function ChartSection() {
 }
 
 function Chart({
-  activeChart,
+  activeChart
 }: {
   activeChart: 'views' | 'desktop' | 'mobile';
 }) {
@@ -214,7 +214,7 @@ function Chart({
         data={chartData}
         margin={{
           left: 12,
-          right: 12,
+          right: 12
         }}
       >
         <CartesianGrid vertical={false} />
@@ -229,7 +229,7 @@ function Chart({
             const date = new Date(value);
             return date.toLocaleDateString('en-US', {
               month: 'short',
-              day: 'numeric',
+              day: 'numeric'
             });
           }}
         />
@@ -242,7 +242,7 @@ function Chart({
                 return new Date(value).toLocaleDateString('en-US', {
                   month: 'short',
                   day: 'numeric',
-                  year: 'numeric',
+                  year: 'numeric'
                 });
               }}
             />

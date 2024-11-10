@@ -14,7 +14,7 @@
     "ui": "@/client/components/ui",
     "components": "@/client/components",
     "hooks": "@/client/hooks",
-    "utils": "@/shared/lib/utils",
-    "lib": "@/lib"
+    "utils": "@/shared/utils/functions.ts",
+    "lib": "@/shared/lib"
   }
 }

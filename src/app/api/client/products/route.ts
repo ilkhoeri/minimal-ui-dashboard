@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { currentUser } from '@/shared/lib/account';
-import db from '@/shared/lib/db';
+import { currentUser } from '@/server/auth/account';
+import db from '@/server/db';
 
 export async function POST(
   req: Request,
-  { params }: { params: Promise<{ userId: string }> },
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
     const userId = (await params).userId;
@@ -24,7 +24,7 @@ export async function POST(
     }
 
     const productByUser = await db.user.findFirst({
-      where: { id: userId },
+      where: { id: userId }
     });
 
     if (!productByUser) {
@@ -42,10 +42,10 @@ export async function POST(
         availableAt: new Date(availableAt),
         images: {
           createMany: {
-            data: [...images.map((image: { url: string }) => image)],
-          },
-        },
-      },
+            data: [...images.map((image: { url: string }) => image)]
+          }
+        }
+      }
     });
 
     return NextResponse.json(newProduct);
@@ -66,9 +66,9 @@ export async function GET() {
         status: true,
         stock: true,
         availableAt: true,
-        id: true,
+        id: true
       },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: 'desc' }
     });
 
     return NextResponse.json(products);

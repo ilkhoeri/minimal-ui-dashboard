@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { currentUser } from '@/shared/lib/account';
+import { currentUser } from '@/server/auth/account';
 import { DashboardPage, dashboardMetadata } from './dashboard';
 
 import type { Metadata } from 'next';
@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function UserLayout({
   params,
-  searchParams,
+  searchParams
 }: Readonly<{
   params: Promise<{ dashboard: string }>;
   searchParams: Promise<{ q: string; tab: string }>;

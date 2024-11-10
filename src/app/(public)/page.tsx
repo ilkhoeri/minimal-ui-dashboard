@@ -1,5 +1,5 @@
-import { currentUser } from '@/shared/lib/account';
-import { getProducts } from '@/shared/lib/get-product';
+import { currentUser } from '@/server/auth/account';
+import { getProducts } from '@/server/post/get-product';
 import { Tabs, TabsContent } from '@/client/components/ui/tabs';
 import { ProductsTable } from '../components/products-table';
 
@@ -12,7 +12,7 @@ export default async function Page(props: {
   const tab = searchParams.tab ?? 0;
   const { products, tabValue, totalProducts } = await getProducts(
     search,
-    Number(tab),
+    Number(tab)
   );
 
   return (

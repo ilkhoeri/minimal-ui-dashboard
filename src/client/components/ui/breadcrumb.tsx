@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link, { type LinkProps } from 'next/link';
 import { IconChevronRight, IconDots } from '@tabler/icons-react';
 
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/functions';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -20,7 +20,7 @@ const BreadcrumbList = React.forwardRef<
     ref={ref}
     className={cn(
       'flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5',
-      className,
+      className
     )}
     {...props}
   />
@@ -56,7 +56,7 @@ const BreadcrumbLink = React.forwardRef<
       className={cn(
         !unstyled &&
           'leading-tight transition-colors text-muted-foreground rounded-md max-w-max inline-flex truncate border-0 max-md:active:bg-primitive/35 max-md:active:border-primitive-emphasis hover:text-foreground md:hover:bg-primitive/35 md:hover:border-primitive-emphasis data-[path=active]:font-medium',
-        className,
+        className
       )}
       {...props}
     />
@@ -118,5 +118,5 @@ export {
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
+  BreadcrumbEllipsis
 };

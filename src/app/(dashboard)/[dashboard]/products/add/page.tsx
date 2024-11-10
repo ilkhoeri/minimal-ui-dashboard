@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { currentUser } from '@/shared/lib/account';
+import { currentUser } from '@/server/auth/account';
 import { ProductForm } from '../../../../components/product-form';
 
 import type { Metadata } from 'next';
@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
       description: namePage,
       url: url + '/products/add',
       locale: 'en_US',
-      type: 'website',
-    },
+      type: 'website'
+    }
   };
 }
 

@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { currentUser } from '@/shared/lib/account';
+import { currentUser } from '@/server/auth/account';
 import { DashboardPage, dashboardMetadata } from '../dashboard';
 
 import type { Metadata } from 'next';
@@ -14,7 +14,7 @@ export interface Params {
 
 export default async function Page({
   params,
-  searchParams,
+  searchParams
 }: Params & {
   searchParams: Promise<{ q: string; tab: string }>;
 }) {

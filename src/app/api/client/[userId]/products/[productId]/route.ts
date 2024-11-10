@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { currentUser } from '@/shared/lib/account';
-import db from '@/shared/lib/db';
+import { currentUser } from '@/server/auth/account';
+import db from '@/server/db';
 
 export async function GET(
   req: Request,
-  { params }: { params: Promise<{ productId: string }> },
+  { params }: { params: Promise<{ productId: string }> }
 ) {
   try {
     const productId = (await params).productId;
@@ -15,14 +15,14 @@ export async function GET(
 
     const product = await db.product.findUnique({
       where: { id: productId },
-      include: { images: true },
+      include: { images: true }
     });
     const sanitizedData = {
       ...product!,
       price: String(product?.price),
       stock: String(product?.stock),
       availableAt: String(product?.availableAt),
-      createdAt: String(product?.availableAt),
+      createdAt: String(product?.availableAt)
     };
 
     return NextResponse.json(sanitizedData);
@@ -34,7 +34,7 @@ export async function GET(
 
 export async function PATCH(
   req: Request,
-  { params }: { params: Promise<{ userId: string; productId: string }> },
+  { params }: { params: Promise<{ userId: string; productId: string }> }
 ) {
   try {
     const { userId, productId } = await params;
@@ -54,7 +54,7 @@ export async function PATCH(
     }
 
     const productByUser = await db.user.findFirst({
-      where: { id: userId },
+      where: { id: userId }
     });
 
     if (!productByUser) {
@@ -74,10 +74,10 @@ export async function PATCH(
         images: {
           deleteMany: {},
           createMany: {
-            data: [...images.map((image: { url: string }) => image)],
-          },
-        },
-      },
+            data: [...images.map((image: { url: string }) => image)]
+          }
+        }
+      }
     });
 
     return NextResponse.json(updatedProduct);
@@ -89,7 +89,7 @@ export async function PATCH(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: Promise<{ userId: string; productId: string }> },
+  { params }: { params: Promise<{ userId: string; productId: string }> }
 ) {
   try {
     const { userId, productId } = await params;
@@ -103,7 +103,7 @@ export async function DELETE(
     }
 
     const productByUser = await db.user.findFirst({
-      where: { id: userId },
+      where: { id: userId }
     });
 
     if (!productByUser) {
@@ -111,7 +111,7 @@ export async function DELETE(
     }
 
     const product = await db.product.delete({
-      where: { id: productId },
+      where: { id: productId }
     });
 
     return NextResponse.json(product);

@@ -1,10 +1,10 @@
 import NextAuth from 'next-auth';
-import authConfig from '@/shared/lib/config';
+import authConfig from '@/server/auth/config';
 import {
   DEFAULT_SIGN_IN_REDIRECT,
   apiAuthPrefix,
   authRoutes,
-  clientRoutes,
+  clientRoutes
 } from './routes/auth-routes';
 
 const { auth } = NextAuth(authConfig);
@@ -44,7 +44,7 @@ export default auth((req) => {
     const encodedCallbackUrl = encodeURIComponent(callbackUrl);
 
     return Response.redirect(
-      new URL(`/auth/sign-in?callbackUrl=${encodedCallbackUrl}`, nextUrl),
+      new URL(`/auth/sign-in?callbackUrl=${encodedCallbackUrl}`, nextUrl)
     );
   }
 
@@ -53,5 +53,5 @@ export default auth((req) => {
 
 // Optionally, don't invoke Middleware on some paths
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)']
 };

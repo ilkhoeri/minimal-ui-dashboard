@@ -1,6 +1,6 @@
-import db from '@/shared/lib/db';
+import db from '@/server/db';
 import NextAuth from 'next-auth';
-import authConfig from './config';
+import authConfig from '@/server/auth/config';
 import { getUserById } from './user';
 import { getAccountByUserId } from './account';
 import { PrismaAdapter } from '@auth/prisma-adapter';
@@ -10,21 +10,21 @@ export const {
   auth,
   signIn,
   signOut,
-  unstable_update: update,
+  unstable_update: update
 } = NextAuth({
   adapter: PrismaAdapter(db),
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/auth/sign-in',
-    error: '/auth/error',
+    error: '/auth/error'
   },
   events: {
     async linkAccount({ user }) {
       await db.user.update({
         where: { id: user.id },
-        data: { emailVerified: new Date() },
+        data: { emailVerified: new Date() }
       });
-    },
+    }
   },
   callbacks: {
     async signIn({ user, account }) {
@@ -66,7 +66,7 @@ export const {
       token.phone = existingUser.phone;
 
       return token;
-    },
+    }
   },
-  ...authConfig,
+  ...authConfig
 });

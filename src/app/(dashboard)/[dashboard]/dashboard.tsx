@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { getProducts } from '@/shared/lib/get-product';
+import { getProducts } from '@/server/post/get-product';
 import { ProductsSection } from './components';
 import { ChartSection } from './chart';
 
@@ -17,15 +17,15 @@ export async function dashboardMetadata(): Promise<Metadata> {
       description: namePage || 'NotFound!',
       url: url + '/dashboard/',
       locale: 'en_US',
-      type: 'website',
-    },
+      type: 'website'
+    }
   };
 }
 
 export async function DashboardPage(
   props: Session & {
     searchParams: Promise<{ q: string; tab: string }>;
-  },
+  }
 ) {
   const searchParams = await props.searchParams;
   const search = searchParams.q ?? '';
@@ -40,7 +40,7 @@ export async function DashboardPage(
   const { products, tabValue, totalProducts } = await getProducts(
     search,
     Number(tab),
-    { productsPerPage, userId: session.id },
+    { productsPerPage, userId: session.id }
   );
 
   return (

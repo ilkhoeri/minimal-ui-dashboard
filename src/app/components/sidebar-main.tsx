@@ -10,7 +10,7 @@ import { Separator } from '@/client/components/ui/separator';
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
+  AvatarImage
 } from '@/client/components/ui/avatar';
 
 import {
@@ -18,7 +18,6 @@ import {
   IconDiscountCheck,
   IconBell,
   IconBook,
-  IconRobot,
   IconChevronRight,
   IconSelector,
   IconCommand,
@@ -39,11 +38,12 @@ import {
   IconLayoutDashboard,
   IconArrowForwardUp,
   IconHome,
+  IconIcons
 } from '@tabler/icons-react';
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
+  CollapsibleTrigger
 } from '@/client/components/ui/collapsible';
 import {
   DropdownMenu,
@@ -53,7 +53,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from '@/client/components/ui/dropdown-menu';
 import {
   Sidebar,
@@ -73,14 +73,15 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-  SidebarTrigger,
+  SidebarTrigger
 } from '@/client/components/ui/sidebar';
+import { cn } from '@/shared/utils/functions';
 
 export function SidebarMain({
   children,
   products,
   session,
-  signOut,
+  signOut
 }: {
   children: React.ReactNode;
   session?: Session | null;
@@ -184,7 +185,11 @@ export function SidebarMain({
                   <Collapsible key={item.title} asChild defaultOpen={isActive}>
                     <CollapsibleTrigger asChild>
                       <SidebarMenuItem className="[&_button>svg]:data-[state=open]:rotate-90">
-                        <SidebarMenuButton asChild tooltip={item.title}>
+                        <SidebarMenuButton
+                          asChild
+                          tooltip={item.title}
+                          className={cn({ 'bg-sidebar-accent': isActive })}
+                        >
                           <Link href={item.url}>
                             <item.icon />
                             <span>{item.title}</span>
@@ -427,18 +432,18 @@ const data = (session: Session | null | undefined) => {
       {
         name: 'Acme Inc',
         logo: IconDeviceNintendo,
-        plan: 'Enterprise',
+        plan: 'Enterprise'
       },
       {
         name: 'Acme Corp.',
         logo: IconWaveSine,
-        plan: 'Startup',
+        plan: 'Startup'
       },
       {
         name: 'Evil Corp.',
         logo: IconCommand,
-        plan: 'Free',
-      },
+        plan: 'Free'
+      }
     ],
     navMain: [
       {
@@ -448,40 +453,40 @@ const data = (session: Session | null | undefined) => {
         items: [
           {
             title: 'History',
-            url: '#history',
+            url: '#history'
           },
           {
             title: 'Analytics',
-            url: '#analytics',
+            url: '#analytics'
           },
           {
             title: 'Products',
-            url: '#products',
+            url: `/${session?.user.id}/products`
           },
           {
             title: 'Settings',
-            url: '#settings',
-          },
-        ],
+            url: '#settings'
+          }
+        ]
       },
       {
         title: 'Models',
         url: '#',
-        icon: IconRobot,
+        icon: IconIcons,
         items: [
           {
             title: 'Genesis',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Explorer',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Quantum',
-            url: '#',
-          },
-        ],
+            url: '#'
+          }
+        ]
       },
       {
         title: 'Documentation',
@@ -490,21 +495,21 @@ const data = (session: Session | null | undefined) => {
         items: [
           {
             title: 'Introduction',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Get Started',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Tutorials',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Changelog',
-            url: '#',
-          },
-        ],
+            url: '#'
+          }
+        ]
       },
       {
         title: 'Settings',
@@ -513,51 +518,51 @@ const data = (session: Session | null | undefined) => {
         items: [
           {
             title: 'General',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Team',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Billing',
-            url: '#',
+            url: '#'
           },
           {
             title: 'Limits',
-            url: '#',
-          },
-        ],
-      },
+            url: '#'
+          }
+        ]
+      }
     ],
     navSecondary: [
       {
         title: 'Support',
         url: '#',
-        icon: IconLifebuoy,
+        icon: IconLifebuoy
       },
       {
         title: 'Feedback',
         url: '#',
-        icon: IconSend,
-      },
+        icon: IconSend
+      }
     ],
     projects: [
       {
         name: 'Design Engineering',
         url: '#',
-        icon: IconKeyframe,
+        icon: IconKeyframe
       },
       {
         name: 'Sales & Marketing',
         url: '#',
-        icon: IconChartPie,
+        icon: IconChartPie
       },
       {
         name: 'Travel',
         url: '#',
-        icon: IconMap,
-      },
-    ],
+        icon: IconMap
+      }
+    ]
   };
 };

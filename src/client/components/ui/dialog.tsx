@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { IconX } from '@tabler/icons-react';
 
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/functions';
 
 const Dialog = DialogPrimitive.Root;
 
@@ -23,7 +23,7 @@ const DialogPortal = ({
     <div
       className={cn(
         'fixed inset-0 z-50 flex items-center justify-center',
-        className,
+        className
       )}
     >
       {children}
@@ -40,7 +40,7 @@ const DialogOverlay = React.forwardRef<
     ref={ref}
     className={cn(
       'fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in',
-      className,
+      className
     )}
     {...props}
   />
@@ -60,7 +60,7 @@ const DialogContent = React.forwardRef<
       aria-disabled={disabled}
       className={cn(
         'fixed z-50 grid w-full max-w-[90%] gap-4 rounded-lg border bg-background p-6 shadow-lg animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:max-w-lg sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 transition-colors ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus,hsl(var(--background)))] focus-visible:ring-offset-2',
-        className,
+        className
       )}
       {...props}
     >
@@ -95,7 +95,7 @@ const DialogFooter = ({
   <div
     className={cn(
       'flex flex-col-reverse sm:flex-row sm:justify-end',
-      className,
+      className
     )}
     {...props}
   />
@@ -110,7 +110,7 @@ const DialogTitle = React.forwardRef<
     ref={ref}
     className={cn(
       'text-[1.5rem] font-semibold leading-none tracking-tight mb-2',
-      className,
+      className
     )}
     {...props}
   />
@@ -136,5 +136,5 @@ export {
   DialogHeader,
   DialogFooter,
   DialogTitle,
-  DialogDescription,
+  DialogDescription
 };

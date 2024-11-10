@@ -18,7 +18,7 @@ import { ImageUpload } from '@/client/components/ui/image-upload';
 import { DeleteProduct } from './actions';
 import { Session } from '@/shared/types/auth';
 import { IconTrash } from '@tabler/icons-react';
-import { formatDateToInput } from '@/shared/lib/utils';
+import { formatDateToInput } from '@/shared/utils/functions';
 
 import {
   Form,
@@ -26,12 +26,12 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from '@/client/components/ui/form';
 
 export function ProductForm({
   session,
-  data,
+  data
 }: Session & { data: SelectProduct | null }) {
   const params = useParams();
   const router = useRouter();
@@ -53,7 +53,7 @@ export function ProductForm({
         images: data.images || [],
         price: parseFloat(data.price) || 0,
         stock: parseFloat(data.stock) || 0,
-        availableAt: formatDateToInput(new Date(data.availableAt)),
+        availableAt: formatDateToInput(new Date(data.availableAt))
       }
     : {
         name: '',
@@ -62,14 +62,14 @@ export function ProductForm({
         status: '',
         price: 0,
         stock: 1,
-        availableAt: formatDateToInput(new Date()),
+        availableAt: formatDateToInput(new Date())
       };
 
   type ProductFormValues = z.infer<typeof products>;
 
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(products),
-    defaultValues,
+    defaultValues
   });
 
   const onSubmit = async (values: ProductFormValues) => {
@@ -78,7 +78,7 @@ export function ProductForm({
       if (data) {
         await axios.patch(
           `/api/client/${params.dashboard}/products/${params.editId}`,
-          values,
+          values
         );
       } else {
         await axios.post(`/api/client/${params.dashboard}/products`, values);
@@ -128,7 +128,7 @@ export function ProductForm({
                     }
                     onRemove={(url) =>
                       field.onChange([
-                        ...field.value.filter((current) => current.url !== url),
+                        ...field.value.filter((current) => current.url !== url)
                       ])
                     }
                   />

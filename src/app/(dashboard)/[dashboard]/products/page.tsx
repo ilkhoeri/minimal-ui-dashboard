@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { currentUser } from '@/shared/lib/account';
+import { currentUser } from '@/server/auth/account';
 import { Button } from '@/client/components/ui/button';
-import { getProducts } from '@/shared/lib/get-product';
+import { getProducts } from '@/server/post/get-product';
 import { IconFileDownload, IconCirclePlus } from '@tabler/icons-react';
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsTrigger,
+  TabsTrigger
 } from '@/client/components/ui/tabs';
 import { ProductsTable } from '../../../components/products-table';
 import { redirect } from 'next/navigation';
@@ -20,7 +20,7 @@ export default async function Page(
   props: Params & {
     searchParams: Promise<{ q: string; tab: string }>;
     // searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  },
+  }
 ) {
   const userId = (await props.params).dashboard;
   const session = await currentUser();
@@ -35,7 +35,7 @@ export default async function Page(
   const { products, tabValue, totalProducts } = await getProducts(
     search,
     Number(tab),
-    { productsPerPage, userId },
+    { productsPerPage, userId }
   );
 
   const rest = { session, tabValue, totalProducts, productsPerPage };
@@ -94,4 +94,4 @@ export default async function Page(
 }
 
 const classLink =
-  'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-3 h-8 gap-1';
+  'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-3 h-8 gap-1 active:scale-[0.99]';

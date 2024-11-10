@@ -7,19 +7,19 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from '@/client/components/ui/dropdown-menu';
 import { IconDots } from '@tabler/icons-react';
 import { TableCell, TableRow } from '@/client/components/ui/table';
 import { SelectProduct } from '@/shared/types/client';
 import { DeleteProduct } from './actions';
 import { Session } from '@/shared/types/auth';
-import { cn, formatTime } from '@/shared/lib/utils';
+import { cn, formatTime } from '@/shared/utils/functions';
 import { Media } from '@/client/components/ui/media';
 
 export function Product({
   session,
-  product,
+  product
 }: Session & {
   product: SelectProduct;
 }) {
@@ -44,7 +44,10 @@ export function Product({
       </TableCell>
 
       <TableCell className="font-medium">
-        <Link href={`/products/${product.id}`} className="block size-full">
+        <Link
+          href={`/products/${product.id}`}
+          className="block size-full hover:underline underline-offset-2 hover:text-blue-600"
+        >
           {product.name}
         </Link>
       </TableCell>
@@ -56,7 +59,7 @@ export function Product({
             variant={cn({
               constructive: variants('active'),
               default: variants('draft'),
-              destructive: variants('archived'),
+              destructive: variants('archived')
             })}
             className="capitalize min-w-[74px] justify-center"
           >

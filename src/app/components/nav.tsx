@@ -2,13 +2,13 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cn, remakeName } from '@/shared/lib/utils';
+import { cn, remakeName } from '@/shared/utils/functions';
 import { VercelLogo } from '@/client/components/icons';
 import { Button } from '@/client/components/ui/button';
 import {
   Sheet,
   SheetContent,
-  SheetTrigger,
+  SheetTrigger
 } from '@/client/components/ui/sheet';
 
 import {
@@ -19,19 +19,19 @@ import {
   IconLayoutSidebar,
   IconSettings,
   IconUsers,
-  IconBasket,
+  IconBasket
 } from '@tabler/icons-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbSeparator,
+  BreadcrumbSeparator
 } from '@/client/components/ui/breadcrumb';
 import {
   Tooltip,
   TooltipContent,
-  TooltipTrigger,
+  TooltipTrigger
 } from '@/client/components/ui/tooltip';
 
 import type { Session } from 'next-auth';
@@ -40,7 +40,7 @@ export function NavItem({
   href,
   label,
   children,
-  stretch,
+  stretch
 }: {
   href: string;
   label: string;
@@ -68,17 +68,17 @@ export function NavItem({
           className={cn(
             'flex items-center gap-4 rounded-lg text-muted-foreground hover:text-foreground min-h-8 size-9 md:size-8 p-1.5 data-[stretch=active]:h-8 data-[stretch=active]:w-full transition-all duration-200',
             {
-              'bg-accent text-black [&_*]:text-black': pathname === href,
-            },
+              'bg-accent text-black [&_*]:text-black': pathname === href
+            }
           )}
         >
           {children}
           <span
             className={cn(
-              'font-medium line-clamp-1 [transition:opacity,transform_200ms_ease]',
+              'font-medium text-sm line-clamp-1 [transition:opacity,transform_200ms_ease]',
               stretch
                 ? 'translate-x-0 opacity-100'
-                : '-translate-x-full opacity-0',
+                : '-translate-x-full opacity-0'
             )}
           >
             {label}
@@ -92,7 +92,7 @@ export function NavItem({
 
 export function NavBreadcrumb({
   session,
-  products,
+  products
 }: {
   session?: Session | null;
   products: { id: string; name: string }[] | null;
@@ -138,7 +138,7 @@ export function NavBreadcrumb({
 
 export function DesktopNav({
   session,
-  children,
+  children
 }: {
   session?: Session | null;
   children?: React.ReactNode;
@@ -150,12 +150,12 @@ export function DesktopNav({
       <aside
         className={cn(
           'fixed inset-y-0 left-0 z-10 hidden sm:flex flex-col border-r bg-background transition-[width] duration-200',
-          stretch ? 'w-[200px]' : 'w-14',
+          stretch ? 'w-[200px]' : 'w-14'
         )}
       >
         <nav
           className={cn(
-            'grid grid-flow-row pr-3 pl-3 gap-4 sm:py-5 transition-[padding] duration-200',
+            'grid grid-flow-row pr-3 pl-3 gap-4 sm:py-5 transition-[padding] duration-200'
           )}
         >
           <Button
@@ -212,7 +212,7 @@ export function DesktopNav({
       <main
         className={cn(
           'flex min-h-screen flex-col bg-muted/40 transition-[padding] duration-200 w-full relative max-sm:pl-0',
-          stretch ? 'pl-[200px]' : 'sm:pl-14',
+          stretch ? 'pl-[200px]' : 'sm:pl-14'
         )}
       >
         {children}
@@ -280,29 +280,29 @@ const routeInSession = (userId: string | undefined) => [
   {
     label: 'Dashboard',
     href: `/dashboard/${userId}`,
-    icon: IconLayoutDashboard,
+    icon: IconLayoutDashboard
   },
   {
     label: 'Products',
     href: `/${userId}/products`,
-    icon: IconPackage,
-  },
+    icon: IconPackage
+  }
 ];
 
 const route = [
   {
     label: 'Orders',
     href: '#',
-    icon: IconBasket,
+    icon: IconBasket
   },
   {
     label: 'Customers',
     href: '/customers',
-    icon: IconUsers,
+    icon: IconUsers
   },
   {
     label: 'Analytics',
     href: '#',
-    icon: IconChartBar,
-  },
+    icon: IconChartBar
+  }
 ];

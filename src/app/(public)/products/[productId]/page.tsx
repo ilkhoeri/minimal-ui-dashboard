@@ -1,6 +1,6 @@
-import { price } from '@/shared/lib/utils';
+import { price } from '@/shared/utils/functions';
 import { notFound } from 'next/navigation';
-import { getProduct } from '@/shared/lib/get-product';
+import { getProduct } from '@/server/post/get-product';
 import { Input } from '@/client/components/ui/input';
 import { Media } from '@/client/components/ui/media';
 import { RatingStars } from '@/client/components/rating/rating';
@@ -8,7 +8,7 @@ import {
   IconChevronLeft,
   IconChevronRight,
   IconMinus,
-  IconPlus,
+  IconPlus
 } from '@tabler/icons-react';
 
 import type { Metadata, ResolvingMetadata } from 'next';
@@ -19,7 +19,7 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const id = (await params).productId;
   const product = await getProduct(id);
@@ -40,19 +40,19 @@ export async function generateMetadata(
         {
           url: product?.images?.[0].url || '',
           width: 800,
-          height: 800,
+          height: 800
         },
-        ...previousImages,
+        ...previousImages
       ],
       url: url + '/products/' + slug,
       locale: 'en_US',
-      type: 'website',
-    },
+      type: 'website'
+    }
   };
 }
 
 export default async function Page({
-  params,
+  params
 }: {
   params: Promise<{ productId: string }>;
 }) {
