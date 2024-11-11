@@ -141,6 +141,7 @@ body {
 body {
   position: relative;
   min-height: 100dvh;
+  height: 100dvh;
   max-width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -184,109 +185,4 @@ input[type='date']::-webkit-calendar-picker-indicator {
   height: var(--sz-icon);
   padding: 0;
   cursor: pointer;
-}
-
-/* progressbar - loading */
-.progress {
-  --progress-color: rgb(46, 46, 46);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 9999;
-  height: 1rem;
-  width: 60%;
-  max-width: 300px;
-  border-radius: 6px;
-  outline: 0.5px solid hsl(var(--muted-foreground));
-  border: 2px solid transparent;
-  overflow: hidden;
-  transition: all 125ms ease;
-  background-color: white;
-  box-shadow:
-    inset 0.2rem 0.2rem 0.5rem #b8b8b9,
-    inset -0.2rem -0.2rem 0.5rem #7c7c7c7c;
-}
-.progress::before {
-  content: '';
-  position: absolute;
-  font-weight: 600;
-  font-size: 14px;
-  z-index: 9;
-  animation: colors 4s ease infinite;
-}
-
-.bar {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  transform-origin: left center;
-  animation: progress 4s ease both;
-}
-.bar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 6px;
-  transform-origin: left center;
-  transition: all 125ms ease;
-  background-size: 1.25rem 1.25rem;
-  box-shadow:
-    inset 0.3rem 0.3rem 0.6rem #ffffff8f,
-    inset -0.2rem -0.2rem 0.5rem #77777777;
-  background-image: linear-gradient(
-    45deg,
-    #cccccc33 25%,
-    transparent 0,
-    transparent 50%,
-    #cccccc33 0,
-    #cccccc33 75%,
-    transparent 0,
-    transparent
-  );
-  animation: bar 1s linear infinite;
-}
-.bar::after {
-  content: '';
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-  background-color: var(--progress-color);
-  background: linear-gradient(
-    90deg,
-    hsl(var(--muted-foreground)) 0%,
-    hsl(var(--muted-foreground)) 100%
-  );
-}
-
-@keyframes colors {
-  from {
-    color: #000;
-  }
-  to {
-    color: #fff;
-  }
-}
-@keyframes progress {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-@keyframes bar {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 2.5rem 0;
-  }
 }

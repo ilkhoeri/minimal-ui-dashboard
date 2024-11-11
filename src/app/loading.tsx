@@ -1,5 +1,5 @@
-import { Loader } from '@/app/components/load';
+import { Loader } from '@/app/components/loader';
 
 export default function Loading() {
-  return <Loader type="progressbar" />;
+  return <Loader type="logo" />;
 }

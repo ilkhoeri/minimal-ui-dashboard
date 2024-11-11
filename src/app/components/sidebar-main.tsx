@@ -95,7 +95,7 @@ export function SidebarMain({
     <SidebarRoot>
       <Sidebar collapsible="icon" className="[&_form]:min-w-8">
         <SidebarHeader>
-          <SidebarMenu className="min-w-8">
+          <SidebarMenu>
             <SidebarMenuItem>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -184,7 +184,7 @@ export function SidebarMain({
                 return (
                   <Collapsible key={item.title} asChild defaultOpen={isActive}>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuItem className="[&_button>svg]:data-[state=open]:rotate-90">
+                      <SidebarMenuItem>
                         <SidebarMenuButton
                           asChild
                           tooltip={item.title}
@@ -199,7 +199,7 @@ export function SidebarMain({
                         {item.items?.length ? (
                           <>
                             <SidebarMenuAction type="button">
-                              <IconChevronRight className="transition-transform" />
+                              <IconChevronRight />
                               <span className="sr-only">Toggle</span>
                             </SidebarMenuAction>
 
